@@ -111,7 +111,7 @@ const Letter: React.FC<LetterProps> = ({ isVisible, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 letter-overlay">
-      <div className="relative max-w-2xl mx-4 bg-gradient-to-br from-cream-50 to-white p-8 md:p-12 shadow-2xl letter-paper transform transition-all duration-1000">
+      <div className="relative max-w-2xl max-h-[90vh] mx-4 bg-gradient-to-br from-cream-50 to-white shadow-2xl letter-paper transform transition-all duration-1000 overflow-hidden">
         {/* Paper texture and lines */}
         <div 
           className="absolute inset-0 opacity-30"
@@ -136,7 +136,7 @@ const Letter: React.FC<LetterProps> = ({ isVisible, onClose }) => {
         )}
 
         {/* Letter content */}
-        <div className="relative z-10 space-y-8">
+        <div className="relative z-10 space-y-8 p-8 md:p-12 overflow-y-auto max-h-[calc(90vh-2rem)]">
           {letterSections.slice(0, currentSection + 1).map((section, index) => (
             <div key={index} className="space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 handwriting-title">
